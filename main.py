@@ -1,5 +1,5 @@
 def main():
-    print("Hello from something!")
+    print("cli youtube downloader")
 
 
 if __name__ == "__main__":
