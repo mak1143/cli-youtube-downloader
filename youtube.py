@@ -7,4 +7,4 @@ yt = YouTube(url, on_progress_callback=on_progress)
 print(yt.title)
 
 ys = yt.streams.get_audio_only()
-ys.download()
+ys.download(output=" /home/shoyo/Downloads/")
