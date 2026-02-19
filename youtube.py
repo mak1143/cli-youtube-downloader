@@ -4,6 +4,7 @@ from pytubefix.cli import on_progress
 
 
 def download_video():
+    print("Please use youtube music for audio")
     inputUrl = input("please enter youtube url>: ")
     yt = YouTube(inputUrl, on_progress_callback=on_progress)
 
