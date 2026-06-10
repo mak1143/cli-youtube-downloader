@@ -1,3 +1,25 @@
+<p align="center">
+  <img
+    width="250"
+    alt="pytubefix_logo"
+    src="https://github.com/user-attachments/assets/f57a840f-9fa7-465c-997b-17bdf8f8be2e"
+  />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/pypi/dm/pytubefix">
+  <img src="https://img.shields.io/github/sponsors/juanbindez">
+  <img src="https://img.shields.io/pypi/l/pytubefix">
+  <img src="https://img.shields.io/readthedocs/pytubefix">
+  <img src="https://img.shields.io/github/v/tag/JuanBindez/pytubefix?include_prereleases">
+  <img src="https://img.shields.io/pypi/v/pytubefix">
+  <img src="https://img.shields.io/pypi/pyversions/pytubefix.svg">
+</p>
+
+<h2 align="center">
+  Python3 Library for Downloading YouTube Videos
+</h2>
+
 # CLI YouTube Downloader
 
 A simple command-line tool to download YouTube videos in high resolution using Python.
