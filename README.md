@@ -40,7 +40,7 @@ A simple command-line tool to download YouTube videos in high resolution using P
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/cli-youtube-downloader.git
+git clone https://github.com/mak1143/cli-youtube-downloader.git
 cd cli-youtube-downloader
 ```
 
@@ -61,30 +61,20 @@ uv sync
 ```
 
 ## Usage
+usage: `ytld [url] [-o DIR] [-a]`
 
 ### Option 1: Run directly
-```bash
-python youtube.py
-```
+```bash 
+run ytdl <url> from anywhere
 
-### Option 2: Run via main
-```bash
-python main.py
 ```
-
 ## How It Works
+|> Works from anywhere
+* `ytdl "https://youtube.com/watch?v=.."`
+* `ytdl -a "https://youtube.com/watch?v=.."`  # audio-only
+* `ytdl -o ~/Videos/ "https://youtube.com/watch?v=.."` 
+* `ytdl` # prompts for URL interactively 
 
-1. Run the script
-2. Enter a YouTube URL when prompted
-3. Video downloads automatically to `~/Downloads/`
-4. Progress is shown during download
-
-```
-Please use youtube music for audio
-please enter youtube url>: https://youtube.com/watch?v=example
-Downloading: Video Title
-Completed! Video Title >: file saved to: ~/Downloads/
-```
 
 ## Note
 
