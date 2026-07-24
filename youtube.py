@@ -1,4 +1,5 @@
-import os, sys
+import os
+import sys
 from pytubefix import YouTube
 from pytubefix.cli import on_progress
 
