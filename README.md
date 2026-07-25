@@ -26,10 +26,13 @@ A simple command-line tool to download YouTube videos in high resolution using P
 
 ## Features
 
-- Download videos from YouTube in highest available resolution
+- Download YouTube videos from anywhere via `ytdl` command
+- Pass URL as argument or get prompted interactively
+- Download highest available resolution (progressive stream)
+- Download audio-only with `-a` flag
+- Custom output directory with `-o` flag
 - Progress callback during download
 - Saves to `~/Downloads/` by default
-- Simple CLI interface
 
 ## Requirements
 
@@ -50,7 +53,7 @@ python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```
 
-3. Install dependencies:
+3. Install (makes `ytdl` available globally):
 ```bash
 pip install -e .
 ```
@@ -61,20 +64,26 @@ uv sync
 ```
 
 ## Usage
-usage: `ytld [url] [-o DIR] [-a]`
 
-### Option 1: Run directly
-```bash 
-run ytdl <url> from anywhere
-
+```bash
+ytdl [url] [-o DIR] [-a]
 ```
-## How It Works
-|> Works from anywhere
-* `ytdl "https://youtube.com/watch?v=.."`
-* `ytdl -a "https://youtube.com/watch?v=.."`  # audio-only
-* `ytdl -o ~/Videos/ "https://youtube.com/watch?v=.."` 
-* `ytdl` # prompts for URL interactively 
 
+After `pip install -e .`, run from anywhere:
+
+```bash
+# Interactive prompt
+ytdl
+
+# Pass URL directly
+ytdl "https://youtube.com/watch?v=..."
+
+# Audio-only
+ytdl -a "https://youtube.com/watch?v=..."
+
+# Custom output directory
+ytdl -o ~/Videos/ "https://youtube.com/watch?v=..."
+```
 
 ## Note
 
@@ -106,11 +115,10 @@ ruff check . && ruff format . && pyright . && pytest
 
 ```
 .
-├── main.py           # Entry point
-├── youtube.py        # Core download functionality
+├── ytdl.py           # CLI YouTube downloader
 ├── pyproject.toml    # Project configuration
 ├── README.md         # This file
-└── AGENTS.md         # Development guidelines
+└── uv.lock           # Dependency lock file (uv)
 ```
 
 ## License
