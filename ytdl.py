@@ -11,23 +11,23 @@ from pytubefix.exceptions import RegexMatchError, VideoUnavailable
 
 
 def download_video(url=None, output=None):
-    if not url:
-        url = input("Enter YouTube URL: ").strip()
-    if not url:
-        print("No URL provided.")
-        return
-
-    if not re.match(r"https?://(music\.)?(youtube\.com|youtu\.be)/", url):
-        print("Invalid URL — must be a YouTube URL (youtube.com or youtu.be)")
-        return
-
     try:
-        yt = YouTube(url, on_progress_callback=on_progress)
-    except (RegexMatchError, VideoUnavailable) as e:
-        print(f"Invalid or unavailable video: {e}")
-        return
+        if not url:
+            url = input("Enter YouTube URL: ").strip()
+        if not url:
+            print("No URL provided.")
+            return
 
-    try:
+        if not re.match(r"https?://(music\.)?(youtube\.com|youtu\.be)/", url):
+            print("Invalid URL — must be a YouTube URL (youtube.com or youtu.be)")
+            return
+
+        try:
+            yt = YouTube(url, on_progress_callback=on_progress)
+        except (RegexMatchError, VideoUnavailable) as e:
+            print(f"Invalid or unavailable video: {e}")
+            return
+
         stream = yt.streams.get_highest_resolution()
 
         dst = output or os.path.expanduser("~/Downloads/")
