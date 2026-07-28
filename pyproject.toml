@@ -9,5 +9,5 @@ dependencies = [
 ]
 
 [project.scripts]
-ytdl = "youtube:download_video"
+ytdl = "ytdl:download_video"
 
