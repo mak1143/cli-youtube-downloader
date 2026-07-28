@@ -26,10 +26,10 @@ A simple command-line tool to download YouTube videos in high resolution using P
 
 ## Features
 
-- Download YouTube videos from anywhere via `ytdl` command
+- Run from anywhere via `ytdl` command (no `cd` needed)
 - Pass URL as argument or get prompted interactively
-- Download highest available resolution (progressive stream)
-- Download audio-only with `-a` flag
+- Supports `youtube.com`, `youtu.be`, and `music.youtube.com` URLs
+- Input validation — catches empty input, bad URLs, and unavailable videos
 - Custom output directory with `-o` flag
 - Progress callback during download
 - Saves to `~/Downloads/` by default
@@ -54,8 +54,15 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```
 
 3. Install (makes `ytdl` available globally):
+
+With pip (recommended):
 ```bash
 pip install -e .
+```
+
+Or with pipx (Arch Linux / PEP 668):
+```bash
+pipx install -e .
 ```
 
 Or with uv:
@@ -66,10 +73,10 @@ uv sync
 ## Usage
 
 ```bash
-ytdl [url] [-o DIR] [-a]
+ytdl [url] [-o DIR]
 ```
 
-After `pip install -e .`, run from anywhere:
+After install, run from anywhere:
 
 ```bash
 # Interactive prompt
@@ -78,16 +85,15 @@ ytdl
 # Pass URL directly
 ytdl "https://youtube.com/watch?v=..."
 
-# Audio-only
-ytdl -a "https://youtube.com/watch?v=..."
+# Music.youtube.com also works
+ytdl "https://music.youtube.com/watch?v=..."
 
 # Custom output directory
 ytdl -o ~/Videos/ "https://youtube.com/watch?v=..."
+
+# Show help
+ytdl --help
 ```
-
-## Note
-
-For audio-only downloads, use [YouTube Music](https://music.youtube.com) URLs with the same library.
 
 ## Development
 
