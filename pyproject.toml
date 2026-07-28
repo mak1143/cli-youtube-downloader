@@ -3,7 +3,7 @@ name = "ytdl"
 version = "0.1.0"
 description = "Cli Youtube downloader"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.10"
 dependencies = [
     "pytubefix>=10.3.6",
 ]
