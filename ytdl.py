@@ -17,7 +17,7 @@ def download_video(url=None, output=None):
         print("No URL provided.")
         return
 
-    if not re.match(r"https?://(www\.)?(youtube\.com|youtu\.be)/", url):
+    if not re.match(r"https?://(music\.)?(youtube\.com|youtu\.be)/", url):
         print("Invalid URL — must be a YouTube URL (youtube.com or youtu.be)")
         return
 
