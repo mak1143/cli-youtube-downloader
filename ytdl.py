@@ -23,7 +23,7 @@ def download_video(url=None, output=None):
             return
 
         try:
-            yt = YouTube(url, on_progress_callback=on_progress)
+            yt = YouTube(url, "WEB", on_progress_callback=on_progress)
         except (RegexMatchError, VideoUnavailable) as e:
             print(f"Invalid or unavailable video: {e}")
             return
